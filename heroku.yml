@@ -1,0 +1,5 @@
+build:
+  docker:
+    web: dockerfile
+run:
+  web: gunicorn geolocation_api.wsgi:application --bind 0.0.0.0:$PORT

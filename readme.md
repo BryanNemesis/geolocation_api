@@ -3,12 +3,12 @@ An API for retrieving and storing geolocation data for IP addresses from ipstack
 ## Authentication
 All API endpoints are authenticated via JWT access token.
 
-To obtain a token, visit the /register/ url to create a user.
+To obtain a token, visit the /register/ url to create a user (or use an already existing user with credentials user/pass).
 Then, send a POST request with the following content to /api/token/:
 ```
 {
-    "username": <username>,
-    "password": <password>
+  "username":"<username>",
+  "password":"<password>"
 }
 ```
 Use the obtained access token preceded by text 'Bearer' in the 'Authorization' header of your requests, like this:
@@ -33,4 +33,11 @@ Shows all saved geolocation data.
 * allowed methods: DELETE
 
 Deletes saved data for a given IP.
+
+## Deployment
+
+```
+
+docker run -d --name geolocation_api -e "PORT=8765" -e "DEBUG=0" -e "SECRET_KEY=<key>" -p 8008:8765 web:latest gunicorn geolocation_api.wsgi:application --bind 0.0.0.0:8765
+```
  

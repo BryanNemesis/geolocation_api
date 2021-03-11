@@ -21,7 +21,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = '$f!(lpij7tyzf@m28k@#3tksj6x&#_m4f$d916-)xvre_ak8u9'
-IPSTACK_KEY = '40f205a64bd03529ecec69f3ece8aceb'
+
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -124,3 +124,7 @@ REST_FRAMEWORK = {
     'DEFAULT_RENDERER_CLASSES': DEFAULT_RENDERER_CLASSES,
     'DEFAULT_AUTHENTICATION_CLASSES': DEFAULT_AUTHENTICATION_CLASSES,
 }
+
+
+EXTERNAL_API_KEY = '40f205a64bd03529ecec69f3ece8aceb'
+EXTERNAL_API_URL = 'http://api.ipstack.com/'

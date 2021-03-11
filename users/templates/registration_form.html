@@ -1,0 +1,16 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Create user</title>
+    </head>
+    <body>
+        <h1>Create user</h1>
+        <form method='POST'>
+            {% csrf_token %}
+            {{ form.as_p }}
+            <h4>After user creation, you will be redirected to the token obtain window.</h4>
+            <button type='submit'>Submit</button>
+        </form>
+    </body>
+</html>

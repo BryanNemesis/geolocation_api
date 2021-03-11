@@ -46,11 +46,12 @@ def list_view(request):
 
 @api_view(['DELETE'])
 @permission_classes([IsAuthenticated])
-def list_view(request, ip):
+def delete_view(request, ip):
     qs = GeoData.objects.filter(ip=ip)
     if qs.exists():
-        serializer = GeoDataSerializer(qs.first())
-        serializer.delete()
+        geodata = qs.first()
+        serializer = GeoDataSerializer(geodata)
+        geodata.delete()
         return Response(serializer.data, status=200)
     else:
         return Response({}, status=404)

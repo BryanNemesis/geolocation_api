@@ -11,5 +11,4 @@ urlpatterns = [
     path('delete/<str:ip>/', delete_view, name='delete-view'),
     path('list/', list_view, name='list-view'),
     path('token/', jwt_views.TokenObtainPairView.as_view(), name='token_obtain_pair'),
-    path('token/refresh/', jwt_views.TokenRefreshView.as_view(), name='token_refresh'),
 ]

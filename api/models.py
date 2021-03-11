@@ -9,4 +9,3 @@ class GeoData(models.Model):
     city = models.CharField(max_length=200)
     latitude = models.CharField(max_length=200)
     longitude = models.CharField(max_length=200)
-
